@@ -1,9 +1,7 @@
-"use client";
-
+import { useInput } from "@/libs/hooks";
 import React from "react";
-import { useInput } from "@/hooks";
 
-export const AuthComponents = ({ onSendAuthEmail }: any) => {
+export default function AuthComponents({ onSendAuthEmail }: any) {
   const [email, onEmailChange, _onReset] = useInput("");
   const onClick = () => {
     onSendAuthEmail(email);
@@ -15,4 +13,4 @@ export const AuthComponents = ({ onSendAuthEmail }: any) => {
       <button onClick={onClick}>wef</button>
     </div>
   );
-};
+}
