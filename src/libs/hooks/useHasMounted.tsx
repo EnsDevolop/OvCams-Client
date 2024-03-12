@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-export const useHasMounted = () => {
+export default function useHasMounted() {
   const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
@@ -8,4 +8,4 @@ export const useHasMounted = () => {
   }, []);
 
   return isClient;
-};
+}

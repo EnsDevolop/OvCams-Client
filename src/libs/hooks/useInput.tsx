@@ -1,6 +1,6 @@
 import { useState, useCallback } from "react";
 
-export const useInput = (defaultValue: string) => {
+export default function useInput(defaultValue: string) {
   const [input, setInput] = useState(defaultValue);
   const onChange = useCallback(
     (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -14,4 +14,4 @@ export const useInput = (defaultValue: string) => {
     typeof onChange,
     typeof onReset
   ];
-};
+}
