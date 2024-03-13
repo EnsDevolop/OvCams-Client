@@ -4,6 +4,7 @@ import Header from "@/components/header/Header";
 import styled from "@emotion/styled";
 import React from "react";
 import FloatingHeader from "@/components/header/FloatingHeader";
+import Footer from "@/components/footer/Footer";
 
 export default function Provider({ children }: { children: React.ReactNode }) {
   return (
@@ -12,6 +13,7 @@ export default function Provider({ children }: { children: React.ReactNode }) {
         <Header />
         <FloatingHeader />
         {children}
+        <Footer />
       </Wrapper>
     </Container>
   );

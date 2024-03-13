@@ -31,6 +31,7 @@ const ButtonBox = styled.button<{ disabled: boolean }>`
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  gap: 10px;
   position: relative;
   box-sizing: border-box;
   background-color: transparent;
