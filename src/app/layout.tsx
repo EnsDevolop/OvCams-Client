@@ -1,6 +1,7 @@
-import Core from "@/libs/layout/Core";
-import Provider from "@/libs/layout/Provider";
-import { ReactQueryClientProvider } from "@/libs/layout/ReactQueryClientProvider";
+import Core from "@/libs/layouts/Core";
+import Provider from "@/libs/layouts/providers/Provider";
+import { ReactQueryClientProvider } from "@/libs/layouts/providers/ReactQueryClientProvider";
+import { AuthModalStoreContextProvider } from "@/libs/layouts/providers/AuthModalStoreContextProvider";
 
 export const metadata = {
   title: "OvCams",
@@ -16,8 +17,10 @@ export default function RootLayout({
     <ReactQueryClientProvider>
       <html>
         <body>
-          <Provider>{children}</Provider>
-          <Core />
+          <AuthModalStoreContextProvider>
+            <Provider>{children}</Provider>
+            <Core />
+          </AuthModalStoreContextProvider>
         </body>
       </html>
     </ReactQueryClientProvider>
