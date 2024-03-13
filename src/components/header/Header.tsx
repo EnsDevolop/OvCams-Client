@@ -1,4 +1,4 @@
-import React, { useRef, useCallback, Fragment } from "react";
+import React, { useRef, useCallback } from "react";
 import HeaderLogo from "./HeaderLogo";
 import HeaderRouter from "./HeaderRouter";
 import styled from "@emotion/styled";
@@ -6,8 +6,10 @@ import { usePathname } from "next/navigation";
 import TextButton from "../common/TextButton";
 import { useToogle } from "@/libs/hooks";
 import HeaderLanguage from "./HeaderLanguage";
+import { useAuthModalStore } from "@/libs/layouts/providers/AuthModalStoreContextProvider";
 
 function Header() {
+  const { openModal } = useAuthModalStore((state) => state);
   const [userMenu, toggleUserMenu] = useToogle(false);
   const ref = useRef<HTMLDivElement>(null);
   const router = usePathname();
@@ -32,21 +34,19 @@ function Header() {
           {userMenu ? (
             <div></div>
           ) : (
-            <Fragment>
-              <TextButton
-                disabled={userMenu}
-                type="button"
-                onClick={() => toggleUserMenu()}
-                color=""
-                sz=""
-                className="123"
-                active={false}
-              >
-                LOGIN
-              </TextButton>
-              <HeaderLanguage />
-            </Fragment>
+            <TextButton
+              disabled={userMenu}
+              type="button"
+              onClick={openModal}
+              color=""
+              sz=""
+              className="123"
+              active={false}
+            >
+              LOGIN
+            </TextButton>
           )}
+          <HeaderLanguage />
         </Right>
       </HeaderWrapper>
     </HeaderContainer>
