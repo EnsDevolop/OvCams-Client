@@ -1,11 +1,8 @@
-"use client";
-
 import Image from "next/image";
 import styled from "@emotion/styled";
 import { themedPalette } from "@/libs/styles/theme";
 import logo from "@/assets/logo.svg";
 import { keyframes, css } from "@emotion/react";
-import { useEffect, useState } from "react";
 import useAnimation from "@/libs/hooks/useAnimation";
 import TextButton from "../common/TextButton";
 
@@ -14,6 +11,12 @@ interface IAuthModalProps {
   visible: boolean;
   onClose: () => void;
 }
+
+const CloseButton = styled(TextButton)`
+  position: fixed;
+  top: 10px;
+  right: 10px;
+`;
 
 export default function AuthModal({
   children,
@@ -26,9 +29,9 @@ export default function AuthModal({
   return (
     <AuthModalBlock>
       <AuthModalWrapper visible={visible}>
-        <TextButton
+        <CloseButton
           onClick={onClose}
-          className="closeModal"
+          className="closeModalButton"
           disabled={false}
           type="button"
           color="white"
@@ -36,7 +39,7 @@ export default function AuthModal({
           active={false}
         >
           X
-        </TextButton>
+        </CloseButton>
         <AuthModalTitle>Login to your Account</AuthModalTitle>
         <LoginFormWrapper>
           <LogoBlock>
@@ -126,7 +129,7 @@ const LoginFormWrapper = styled.div`
   align-items: center;
   justify-content: center;
   gap: 30px;
-  margin-top: 30px;
+  margin-top: 45px;
 `;
 
 const LogoBlock = styled.div`
