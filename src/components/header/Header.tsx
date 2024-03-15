@@ -1,4 +1,4 @@
-import React, { useRef, useCallback } from "react";
+import React, { useRef } from "react";
 import HeaderLogo from "./HeaderLogo";
 import HeaderRouter from "./HeaderRouter";
 import styled from "@emotion/styled";
@@ -24,8 +24,8 @@ function Header() {
   // );
 
   return (
-    <HeaderContainer>
-      <HeaderWrapper>
+    <HeaderBlock>
+      <HeaderInner>
         <Left>
           <HeaderLogo />
           <HeaderRouter currentUrl={router} />
@@ -48,19 +48,19 @@ function Header() {
           )}
           <HeaderLanguage />
         </Right>
-      </HeaderWrapper>
-    </HeaderContainer>
+      </HeaderInner>
+    </HeaderBlock>
   );
 }
 
-const HeaderContainer = styled.div`
+const HeaderBlock = styled.div`
   position: absolute;
   top: 0;
   z-index: 10;
   height: 60px;
 `;
 
-const HeaderWrapper = styled.div`
+const HeaderInner = styled.div`
   width: 1608px;
   height: 100%;
   display: flex;
