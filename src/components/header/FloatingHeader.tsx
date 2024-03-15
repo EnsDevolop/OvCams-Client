@@ -23,7 +23,7 @@ export default function FloatingHeader() {
 }
 
 const FloatingHeaderBlock = styled.div`
-  width: 1608px;
+  width: 100%;
   background-color: black;
   top: 0;
   position: fixed;
@@ -31,4 +31,7 @@ const FloatingHeaderBlock = styled.div`
   overflow: hidden;
   transition: height 0.4s ease;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;

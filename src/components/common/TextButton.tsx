@@ -25,11 +25,20 @@ const included = [
 
 const TextButton = React.forwardRef<HTMLButtonElement, TextButtonProps>(
   function TextButton(props, ref) {
-    const { color, startIcon, endIcon, disabled, children, active, sz } = props;
+    const {
+      color,
+      startIcon,
+      endIcon,
+      disabled,
+      children,
+      active,
+      sz,
+      className,
+    } = props;
 
     const others = useFilteredProps(props, included) as Omit<
       ButtonPropsProps,
-      "children"
+      "children" | "className"
     >;
     return (
       <TextButtonBox
@@ -37,11 +46,13 @@ const TextButton = React.forwardRef<HTMLButtonElement, TextButtonProps>(
         sz={sz}
         active={active}
         ref={ref}
+        className={className}
         {...others}
       >
         {startIcon}
         {children}
         {endIcon}
+        <TextButtonBottomBar active={active} />
       </TextButtonBox>
     );
   }
@@ -58,7 +69,7 @@ const FontWeightKeyFrame = keyframes`
 
 const BorderBottomKeyFrame = keyframes`
   0%{
-    width: 0%
+    width: 0
   }
   100%{
     width: 100%
@@ -73,17 +84,18 @@ const TextButtonBox = styled(Button)<OtherProps>`
   font-family: Roboto;
   line-height: 20px;
   overflow: hidden;
-  animation: ${({ active }) => active && FontWeightKeyFrame} 0.5s;
-  &:after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: ${({ active }) => (active ? 0 : "-100%")};
-    width: 100%;
-    height: 1px;
-    background-color: ${themedPalette.white};
-    animation: ${BorderBottomKeyFrame} 0.5s;
-  }
+  animation: ${({ active }) => active && FontWeightKeyFrame} 1s;
+`;
+
+const TextButtonBottomBar = styled.div<{ active: boolean }>`
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: ${({ active }) => (active ? 0 : "-100%")};
+  width: ${({ active }) => (active ? "100%" : 0)};
+  height: 1px;
+  background-color: ${themedPalette.white};
+  animation: ${({ active }) => active && BorderBottomKeyFrame} 1s;
 `;
 
 export default TextButton;

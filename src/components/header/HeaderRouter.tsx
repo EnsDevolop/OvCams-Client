@@ -1,6 +1,4 @@
 import { Router } from "@/libs/constants/Router";
-import { themedPalette } from "@/libs/styles/theme";
-import { keyframes } from "@emotion/react";
 import styled from "@emotion/styled";
 import Link from "next/link";
 import TextButton from "../common/TextButton";
