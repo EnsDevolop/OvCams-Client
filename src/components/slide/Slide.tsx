@@ -1,13 +1,12 @@
 "use client";
 
-import React, { useState } from "react";
 import styled from "@emotion/styled";
 import { css } from "@emotion/react";
 import { ASIA, EUROPE, AFRICA, OCEANIA } from "@/assets/slide";
+import { useEffect, useState } from "react";
 
 export default function Slide() {
   const [activeSlide, setActiveSlide] = useState(0);
-
   const slides = [
     {
       imageUrl: `url(${ASIA.src})`,
@@ -27,44 +26,23 @@ export default function Slide() {
     },
   ];
 
-  const handleSlideClick = (index: number) => {
-    setActiveSlide(index);
-  };
+  useEffect(() => {
+    setActiveSlide(0);
+  }, []);
 
   return (
-    <SlideContainer>
-      <SlideWrapper>
-        {slides.map((slide, index) => (
-          <SlideBlock
-            key={index}
-            active={index === activeSlide}
-            style={{ backgroundImage: slide.imageUrl }}
-            onClick={() => handleSlideClick(index)}
-          />
-        ))}
-      </SlideWrapper>
-    </SlideContainer>
+    <>
+      {slides.map((slide, index) => (
+        <SlideBlock
+          key={index}
+          active={index === activeSlide}
+          style={{ backgroundImage: slide.imageUrl }}
+          onClick={() => setActiveSlide(index)}
+        />
+      ))}
+    </>
   );
 }
-
-const SlideContainer = styled.div`
-  display: flex;
-  width: 100vw;
-  overflow: hidden;
-  margin: 0;
-  height: 100vh;
-  background-color: #0f0f0f;
-`;
-
-const SlideWrapper = styled.div`
-  display: flex;
-  width: 100%;
-  overflow: hidden;
-  margin: 1px;
-  height: 100%;
-  justify-content: center;
-  align-items: center;
-`;
 
 const SlideBlock = styled.div<{ active: boolean }>`
   height: 100%;
