@@ -1,3 +1,5 @@
+"use client";
+
 import styled from "@emotion/styled";
 
 export default function Footer() {
@@ -13,12 +15,12 @@ export default function Footer() {
 }
 
 const FooterContainer = styled.div`
-  position: absolute;
-  bottom: -100%;
+  position: relative;
+  transform: translateY(0);
   height: 180px;
 `;
 
-const FooterWrapper = styled.div`
+const FooterWrapper = styled.span`
   width: 1608px;
   height: 100%;
   display: flex;
