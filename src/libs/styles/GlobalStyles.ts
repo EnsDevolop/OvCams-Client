@@ -1,5 +1,5 @@
 import { css } from "@emotion/react";
-import { themes } from "./theme";
+import { themedPalette, themes } from "./theme";
 const GlobalStyles = css`
   body {
     margin: 0;
@@ -23,10 +23,13 @@ const GlobalStyles = css`
       "Courier New", monospace;
   }
 
+  span,
+  p,
   input,
   button,
   textarea {
     font-family: inherit;
+    color: ${themedPalette.white};
   }
 
   html,

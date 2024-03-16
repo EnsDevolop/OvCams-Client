@@ -2,6 +2,7 @@ import Core from "@/libs/layouts/Core";
 import Provider from "@/libs/layouts/providers/Provider";
 import { ReactQueryClientProvider } from "@/libs/layouts/providers/ReactQueryClientProvider";
 import { AuthModalStoreContextProvider } from "@/libs/layouts/providers/AuthModalStoreContextProvider";
+import { ContinentStoreContextProvider } from "@/libs/layouts/providers/ContinentStoreContextProvider";
 
 export const metadata = {
   title: "OvCams",
@@ -18,8 +19,10 @@ export default function RootLayout({
       <html>
         <body>
           <AuthModalStoreContextProvider>
-            <Provider>{children}</Provider>
-            <Core />
+            <ContinentStoreContextProvider>
+              <Provider>{children}</Provider>
+              <Core />
+            </ContinentStoreContextProvider>
           </AuthModalStoreContextProvider>
         </body>
       </html>
