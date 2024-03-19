@@ -4,5 +4,20 @@
     "**/.pnp.*": true
   },
   "typescript.tsdk": ".yarn/sdks/typescript/lib",
-  "typescript.enablePromptUseWorkspaceTsdk": true
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+  "cSpell.words": [
+    "Cantarell",
+    "Consolas",
+    "Dotum",
+    "Fira",
+    "Malgun",
+    "Menlo",
+    "Nanum",
+    "Neue",
+    "Noto",
+    "Roboto",
+    "Segoe",
+    "Tahoma",
+    "zustand"
+  ]
 }
