@@ -4,13 +4,13 @@ import HeaderRouter from "./HeaderRouter";
 import styled from "@emotion/styled";
 import { usePathname } from "next/navigation";
 import TextButton from "../common/TextButton";
-import { useToogle } from "@/libs/hooks";
+import { useToggle } from "@/libs/hooks";
 import HeaderLanguage from "./HeaderLanguage";
 import { useAuthModalStore } from "@/libs/layouts/providers/AuthModalStoreContextProvider";
 
 function Header() {
   const { openModal } = useAuthModalStore((state) => state);
-  const [userMenu, toggleUserMenu] = useToogle(false);
+  const [userMenu, toggleUserMenu] = useToggle(false);
   const ref = useRef<HTMLDivElement>(null);
   const router = usePathname();
 
