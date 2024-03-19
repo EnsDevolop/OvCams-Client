@@ -1,28 +1,15 @@
-import { AuthLogoBox } from "./style";
+import { AuthLogoBox } from "./style"
 
 export const GoogleIcon = () => {
   return (
     <AuthLogoBox>
-      <svg
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
         <g clip-path="url(#clip0_261_460)">
           <path
             d="M24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24C18.6274 24 24 18.6274 24 12Z"
             fill="white"
           />
-          <mask
-            id="mask0_261_460"
-            maskUnits="userSpaceOnUse"
-            x="6"
-            y="6"
-            width="12"
-            height="12"
-          >
+          <mask id="mask0_261_460" maskUnits="userSpaceOnUse" x="6" y="6" width="12" height="12">
             <path d="M18 6H6V18H18V6Z" fill="white" />
           </mask>
           <g mask="url(#mask0_261_460)">
@@ -46,5 +33,5 @@ export const GoogleIcon = () => {
         </g>
       </svg>
     </AuthLogoBox>
-  );
-};
+  )
+}

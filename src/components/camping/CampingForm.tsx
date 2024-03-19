@@ -1,14 +1,10 @@
-"use client";
+"use client"
 
-import CampingHeader from "./CampingHeader";
-import styled from "@emotion/styled";
-import CampingSide from "./CampingSide";
+import CampingHeader from "./CampingHeader"
+import styled from "@emotion/styled"
+import CampingSide from "./CampingSide"
 
-export default function CampingForm({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function CampingForm({ children }: { children: React.ReactNode }) {
   return (
     <CampingBox>
       <CampingHeader />
@@ -17,7 +13,7 @@ export default function CampingForm({
         {children}
       </CampingMain>
     </CampingBox>
-  );
+  )
 }
 
 const CampingBox = styled.div`
@@ -28,7 +24,7 @@ const CampingBox = styled.div`
   align-items: center;
   justify-content: center;
   gap: 10px;
-`;
+`
 
 const CampingMain = styled.div`
   width: 100vw;
@@ -37,4 +33,4 @@ const CampingMain = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: center;
-`;
+`

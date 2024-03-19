@@ -1,62 +1,32 @@
-import styled from "@emotion/styled";
-import Button, { ButtonPropsProps } from "./Button";
-import { themedPalette } from "@/libs/styles/theme";
-import React from "react";
-import useFilteredProps from "@/libs/hooks/useFilteredProps";
-import { keyframes } from "@emotion/react";
+import styled from "@emotion/styled"
+import Button, { ButtonPropsProps } from "./Button"
+import { themedPalette } from "@/libs/styles/theme"
+import React from "react"
+import useFilteredProps from "@/libs/hooks/useFilteredProps"
+import { keyframes } from "@emotion/react"
 
 type IconProps = {
-  startIcon?: React.ReactNode;
-  endIcon?: React.ReactNode;
-};
-type OtherProps = { color: string; sz: string; active: boolean };
-type TextButtonProps = ButtonPropsProps & IconProps & OtherProps;
+  startIcon?: React.ReactNode
+  endIcon?: React.ReactNode
+}
+type OtherProps = { color: string; sz: string; active: boolean }
+type TextButtonProps = ButtonPropsProps & IconProps & OtherProps
 
-const included = [
-  "className",
-  "children",
-  "startIcon",
-  "endIcon",
-  "color",
-  "sz",
-  "disabled",
-  "active",
-];
+const included = ["className", "children", "startIcon", "endIcon", "color", "sz", "disabled", "active"]
 
-const TextButton = React.forwardRef<HTMLButtonElement, TextButtonProps>(
-  function TextButton(props, ref) {
-    const {
-      color,
-      startIcon,
-      endIcon,
-      disabled,
-      children,
-      active,
-      sz,
-      className,
-    } = props;
+const TextButton = React.forwardRef<HTMLButtonElement, TextButtonProps>(function TextButton(props, ref) {
+  const { color, startIcon, endIcon, disabled, children, active, sz, className } = props
 
-    const others = useFilteredProps(props, included) as Omit<
-      ButtonPropsProps,
-      "children" | "className"
-    >;
-    return (
-      <TextButtonBox
-        color="white"
-        sz={sz}
-        active={active}
-        ref={ref}
-        className={className}
-        {...others}
-      >
-        {startIcon}
-        {children}
-        {endIcon}
-        <TextButtonBottomBar active={active} />
-      </TextButtonBox>
-    );
-  }
-);
+  const others = useFilteredProps(props, included) as Omit<ButtonPropsProps, "children" | "className">
+  return (
+    <TextButtonBox color="white" sz={sz} active={active} ref={ref} className={className} {...others}>
+      {startIcon}
+      {children}
+      {endIcon}
+      <TextButtonBottomBar active={active} />
+    </TextButtonBox>
+  )
+})
 
 const FontWeightKeyFrame = keyframes`
   0%{
@@ -65,7 +35,7 @@ const FontWeightKeyFrame = keyframes`
   100%{
     font-weight: 600
   }
-`;
+`
 
 const BorderBottomKeyFrame = keyframes`
   0%{
@@ -74,7 +44,7 @@ const BorderBottomKeyFrame = keyframes`
   100%{
     width: 100%
   }
-`;
+`
 
 const TextButtonBox = styled(Button)<OtherProps>`
   color: ${themedPalette.white};
@@ -85,7 +55,7 @@ const TextButtonBox = styled(Button)<OtherProps>`
   line-height: 20px;
   overflow: hidden;
   animation: ${({ active }) => active && FontWeightKeyFrame} 1s;
-`;
+`
 
 const TextButtonBottomBar = styled.div<{ active: boolean }>`
   content: "";
@@ -96,6 +66,6 @@ const TextButtonBottomBar = styled.div<{ active: boolean }>`
   height: 1px;
   background-color: ${themedPalette.white};
   animation: ${({ active }) => active && BorderBottomKeyFrame} 1s;
-`;
+`
 
-export default TextButton;
+export default TextButton

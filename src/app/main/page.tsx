@@ -1,9 +1,11 @@
-import SlideContainer from "@/components/slide/Slide";
+import CampingLandingContainer from "@/containers/camping/CampingLandingContainer"
+import SlideContainer from "@/containers/slide/SlideContainer"
 
 export default function Home() {
   return (
     <>
       <SlideContainer />
+      <CampingLandingContainer />
     </>
-  );
+  )
 }

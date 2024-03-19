@@ -1,31 +1,23 @@
-import styled from "@emotion/styled";
-import React from "react";
+import styled from "@emotion/styled"
+import React from "react"
 
 export type ButtonPropsProps = {
-  className: string;
-  children: React.ReactNode;
-  disabled: boolean;
-  type: "submit" | "button";
-  onClick?: () => void;
-};
+  className: string
+  children: React.ReactNode
+  disabled: boolean
+  type: "submit" | "button"
+  onClick?: () => void
+}
 
-const Button = React.forwardRef<HTMLButtonElement, ButtonPropsProps>(
-  function Button(props, ref) {
-    const { className, children, type, onClick, disabled } = props;
+const Button = React.forwardRef<HTMLButtonElement, ButtonPropsProps>(function Button(props, ref) {
+  const { className, children, type, onClick, disabled } = props
 
-    return (
-      <ButtonBox
-        className={className}
-        type={type}
-        ref={ref}
-        onClick={onClick}
-        disabled={disabled}
-      >
-        {children}
-      </ButtonBox>
-    );
-  }
-);
+  return (
+    <ButtonBox className={className} type={type} ref={ref} onClick={onClick} disabled={disabled}>
+      {children}
+    </ButtonBox>
+  )
+})
 
 const ButtonBox = styled.button<{ disabled: boolean }>`
   display: inline-flex;
@@ -50,6 +42,6 @@ const ButtonBox = styled.button<{ disabled: boolean }>`
   font-weight: 400;
   font-family: Roboto;
   line-height: 20px;
-`;
+`
 
-export default Button;
+export default Button

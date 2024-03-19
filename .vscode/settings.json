@@ -4,5 +4,9 @@
     "**/.pnp.*": true
   },
   "typescript.tsdk": ".yarn/sdks/typescript/lib",
-  "typescript.enablePromptUseWorkspaceTsdk": true
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+  "files.autoSave": "afterDelay",
+  "editor.fontFamily": "\"Monaspace Radon Var\"",
+  "npm.packageManager": "yarn",
+  "prettier.resolveGlobalModules": true
 }

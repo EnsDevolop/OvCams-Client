@@ -1,7 +1,6 @@
-// useContinentAndCountryStore.ts
-import { createStore } from "zustand/vanilla";
+import { createStore } from "zustand/vanilla"
 
-export type Continent = "ASIA" | "AFRICA" | "EUROPE" | "OCEANIA" | "AMERICA";
+export type Continent = "ASIA" | "AFRICA" | "EUROPE" | "OCEANIA" | "AMERICA"
 export type Country =
   | "KOREA"
   | "JAPAN"
@@ -27,28 +26,26 @@ export type Country =
   | "CANADA"
   | "COSTA RICA"
   | "CHILE"
-  | "BRAZIL";
+  | "BRAZIL"
 
 export type ContinentState = {
-  continent: Continent;
-  selectedCountry: Country;
-};
+  continent: Continent
+  selectedCountry: Country
+}
 
 export type ContinentActions = {
-  changeContinent: (continent: Continent) => void;
-  selectCountry: (country: Country) => void;
-  reset: () => void;
-};
+  changeContinent: (continent: Continent) => void
+  selectCountry: (country: Country) => void
+  reset: () => void
+}
 
-export type ContinentStore = ContinentActions & ContinentState;
+export type ContinentStore = ContinentActions & ContinentState
 export const defaultInitState: ContinentState = {
   continent: "ASIA",
   selectedCountry: "KOREA",
-};
+}
 
-export const createContinentAndCountry = (
-  initState: ContinentState = defaultInitState
-) => {
+export const createContinentAndCountry = (initState: ContinentState = defaultInitState) => {
   return createStore<ContinentStore>()((set) => ({
     ...initState,
     changeContinent: (continent: Continent) =>
@@ -58,29 +55,22 @@ export const createContinentAndCountry = (
       }),
     selectCountry: (country: Country) => set({ selectedCountry: country }),
     reset: () => set(() => defaultInitState),
-  }));
-};
+  }))
+}
 
 const getCountriesByContinent = (continent: Continent): Country[] => {
   switch (continent) {
     case "ASIA":
-      return ["KOREA", "JAPAN", "THAILAND", "MONGOLIA", "NEPAL"];
+      return ["KOREA", "JAPAN", "THAILAND", "MONGOLIA", "NEPAL"]
     case "EUROPE":
-      return [
-        "FRANCE",
-        "SWEDEN",
-        "SWITZERLAND",
-        "NORWAY",
-        "UNITED KINGDOM",
-        "CROATIA",
-      ];
+      return ["FRANCE", "SWEDEN", "SWITZERLAND", "NORWAY", "UNITED KINGDOM", "CROATIA"]
     case "AFRICA":
-      return ["SOUTH AFRICA", "KENYA", "NAMIBIA", "TANZANIA", "UGANDA"];
+      return ["SOUTH AFRICA", "KENYA", "NAMIBIA", "TANZANIA", "UGANDA"]
     case "OCEANIA":
-      return ["NEW ZEALAND", "AUSTRALIA", "FIJI", "NEW CALEDONIA"];
+      return ["NEW ZEALAND", "AUSTRALIA", "FIJI", "NEW CALEDONIA"]
     case "AMERICA":
-      return ["UNITED STATES", "CANADA", "COSTA RICA", "CHILE", "BRAZIL"];
+      return ["UNITED STATES", "CANADA", "COSTA RICA", "CHILE", "BRAZIL"]
     default:
-      return [];
+      return []
   }
-};
+}
