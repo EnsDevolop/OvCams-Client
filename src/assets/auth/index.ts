@@ -1,2 +1,2 @@
-export * from "./googleIcon";
-export * from "./naverIcon";
+export * from "./googleIcon"
+export * from "./naverIcon"

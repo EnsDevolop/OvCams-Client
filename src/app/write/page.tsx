@@ -1,7 +1,7 @@
-"use client";
+"use client"
 
-import MarkDownEditorContainer from "@/containers/write/MarkDownEditorContainer";
+import MarkDownEditorContainer from "@/containers/write/MarkDownEditorContainer"
 
 export default function Home() {
-  return <MarkDownEditorContainer />;
+  return <MarkDownEditorContainer />
 }

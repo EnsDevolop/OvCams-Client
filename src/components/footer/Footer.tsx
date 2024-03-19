@@ -1,6 +1,6 @@
-"use client";
+"use client"
 
-import styled from "@emotion/styled";
+import styled from "@emotion/styled"
 
 export default function Footer() {
   return (
@@ -11,14 +11,14 @@ export default function Footer() {
         Copyright © 2024 OvCams Inc
       </FooterWrapper>
     </FooterContainer>
-  );
+  )
 }
 
 const FooterContainer = styled.div`
   position: relative;
   transform: translateY(0);
   height: 180px;
-`;
+`
 
 const FooterWrapper = styled.span`
   width: 1608px;
@@ -28,4 +28,4 @@ const FooterWrapper = styled.span`
   justify-content: space-between;
   gap: 10px;
   padding: 30px 0;
-`;
+`

@@ -1,7 +1,7 @@
-import React from "react";
-import TextButton from "../common/TextButton";
-import { GoogleIcon, NaverIcon } from "@/assets/auth";
-import styled from "@emotion/styled";
+import React from "react"
+import TextButton from "../common/TextButton"
+import { GoogleIcon, NaverIcon } from "@/assets/auth"
+import styled from "@emotion/styled"
 
 export default function AuthForm() {
   return (
@@ -14,7 +14,7 @@ export default function AuthForm() {
         sz="small"
         active={false}
         onClick={() => {
-          window.location.href = "http://localhost:8080/auth/google";
+          window.location.href = "http://localhost:8080/auth/google"
         }}
         startIcon={<GoogleIcon />}
       >
@@ -28,14 +28,14 @@ export default function AuthForm() {
         sz="small"
         active={false}
         onClick={() => {
-          window.location.href = "http://localhost:8080/auth/naver";
+          window.location.href = "http://localhost:8080/auth/naver"
         }}
         startIcon={<NaverIcon />}
       >
         Continue with Naver
       </TextButton>
     </LoginBox>
-  );
+  )
 }
 
 const LoginBox = styled.div`
@@ -45,4 +45,4 @@ const LoginBox = styled.div`
   align-items: flex-start;
   justify-content: center;
   gap: 10px;
-`;
+`

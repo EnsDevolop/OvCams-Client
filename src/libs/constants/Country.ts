@@ -84,4 +84,4 @@ export const Country = {
       tab: "BRAZIL",
     },
   ],
-};
+}

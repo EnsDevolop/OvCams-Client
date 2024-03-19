@@ -1,5 +1,5 @@
-import BlogCardList from "@/components/blog/BlogCardList";
-import SearchResultInfo from "@/components/search/SearchResult";
+import BlogCardList from "@/components/post/BlogCardList"
+import SearchResultInfo from "@/components/search/SearchResult"
 
 export default function SearchResult() {
   return (
@@ -7,5 +7,5 @@ export default function SearchResult() {
       <SearchResultInfo />
       <BlogCardList data={[]} />
     </div>
-  );
+  )
 }

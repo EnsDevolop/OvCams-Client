@@ -1,30 +1,26 @@
-import Image from "next/image";
-import styled from "@emotion/styled";
-import { themedPalette } from "@/libs/styles/theme";
-import logo from "@/assets/logo.svg";
-import { keyframes, css } from "@emotion/react";
-import useAnimation from "@/libs/hooks/useAnimation";
-import TextButton from "../common/TextButton";
+import Image from "next/image"
+import styled from "@emotion/styled"
+import { themedPalette } from "@/libs/styles/theme"
+import logo from "@/assets/logo.svg"
+import { keyframes, css } from "@emotion/react"
+import useAnimation from "@/libs/hooks/useAnimation"
+import TextButton from "../common/TextButton"
 
 interface IAuthModalProps {
-  children: React.ReactNode;
-  visible: boolean;
-  onClose: () => void;
+  children: React.ReactNode
+  visible: boolean
+  onClose: () => void
 }
 
 const CloseButton = styled(TextButton)`
   position: fixed;
   top: 10px;
   right: 10px;
-`;
+`
 
-export default function AuthModal({
-  children,
-  visible,
-  onClose,
-}: IAuthModalProps) {
-  const [worked, setWorked] = useAnimation(visible, 400);
-  if (!visible && worked) return null;
+export default function AuthModal({ children, visible, onClose }: IAuthModalProps) {
+  const [worked, setWorked] = useAnimation(visible, 400)
+  if (!visible && worked) return null
 
   return (
     <AuthModalBlock>
@@ -50,7 +46,7 @@ export default function AuthModal({
         </LoginFormWrapper>
       </AuthModalWrapper>
     </AuthModalBlock>
-  );
+  )
 }
 
 const PopIn = keyframes`
@@ -66,7 +62,7 @@ const PopIn = keyframes`
     opacity: 1;
     transform: translateY(0px);
   }
-`;
+`
 
 const PopOut = keyframes`
   100% {
@@ -81,7 +77,7 @@ const PopOut = keyframes`
     opacity: 1;
     transform: translateY(0px);
   }
-`;
+`
 
 const AuthModalBlock = styled.div`
   position: fixed;
@@ -94,7 +90,7 @@ const AuthModalBlock = styled.div`
   justify-content: center;
   z-index: 9999;
   background: rgba(0, 0, 0, 0.6);
-`;
+`
 
 const AuthModalWrapper = styled.div<{ visible: boolean }>`
   width: 430px;
@@ -111,7 +107,7 @@ const AuthModalWrapper = styled.div<{ visible: boolean }>`
       : css`
           ${PopOut} 0.4s forwards ease-in-out
         `};
-`;
+`
 
 const AuthModalTitle = styled.span`
   color: ${themedPalette.white};
@@ -121,7 +117,7 @@ const AuthModalTitle = styled.span`
   font-weight: 400;
   line-height: 20px;
   margin-top: 16px;
-`;
+`
 
 const LoginFormWrapper = styled.div`
   display: flex;
@@ -130,7 +126,7 @@ const LoginFormWrapper = styled.div`
   justify-content: center;
   gap: 30px;
   margin-top: 45px;
-`;
+`
 
 const LogoBlock = styled.div`
   display: flex;
@@ -138,4 +134,4 @@ const LogoBlock = styled.div`
   width: 200px;
   align-items: center;
   justify-content: center;
-`;
+`

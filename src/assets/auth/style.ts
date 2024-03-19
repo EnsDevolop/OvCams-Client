@@ -1,5 +1,5 @@
-import { themedPalette } from "@/libs/styles/theme";
-import styled from "@emotion/styled";
+import { themedPalette } from "@/libs/styles/theme"
+import styled from "@emotion/styled"
 
 export const AuthLogoBox = styled.div`
   width: 24px;
@@ -9,4 +9,4 @@ export const AuthLogoBox = styled.div`
   justify-content: center;
   border-radius: 50%;
   background-color: ${themedPalette.white};
-`;
+`
