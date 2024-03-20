@@ -19,5 +19,7 @@
     "Segoe",
     "Tahoma",
     "zustand"
-  ]
+  ],
+  "npm.packageManager": "yarn",
+  "prettier.prettierPath": ".yarn/sdks/prettier/index.cjs"
 }
