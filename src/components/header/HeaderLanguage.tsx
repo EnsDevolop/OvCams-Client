@@ -1,32 +1,18 @@
-import styled from "@emotion/styled";
-import TextButton from "../common/TextButton";
-import { themedPalette } from "@/libs/styles/theme";
+import styled from "@emotion/styled"
+import TextButton from "../common/TextButton"
+import { themedPalette } from "@/libs/styles/theme"
 
 export default function HeaderLanguage() {
   return (
     <HeaderLanguageBox>
-      <TextButton
-        className={""}
-        disabled={true}
-        type={"button"}
-        color={""}
-        sz={""}
-        active={false}
-      >
+      <TextButton className={""} disabled={true} type={"button"} color={""} sz={""} active={false}>
         KR
       </TextButton>
-      <TextButton
-        className={""}
-        disabled={false}
-        type={"button"}
-        color={""}
-        sz={""}
-        active={true  }
-      >
+      <TextButton className={""} disabled={false} type={"button"} color={""} sz={""} active={true}>
         EN
       </TextButton>
     </HeaderLanguageBox>
-  );
+  )
 }
 
 const HeaderLanguageBox = styled.div`
@@ -45,4 +31,4 @@ const HeaderLanguageBox = styled.div`
     left: 50%;
     background-color: ${themedPalette.white};
   }
-`;
+`
