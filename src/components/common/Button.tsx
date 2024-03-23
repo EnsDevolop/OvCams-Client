@@ -13,13 +13,13 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonPropsProps>(function Bu
   const { className, children, type, onClick, disabled } = props
 
   return (
-    <ButtonBox className={className} type={type} ref={ref} onClick={onClick} disabled={disabled}>
+    <ButtonBlock className={className} type={type} ref={ref} onClick={onClick} disabled={disabled}>
       {children}
-    </ButtonBox>
+    </ButtonBlock>
   )
 })
 
-const ButtonBox = styled.button<{ disabled: boolean }>`
+const ButtonBlock = styled.button<{ disabled: boolean }>`
   display: inline-flex;
   align-items: center;
   justify-content: center;
