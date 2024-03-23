@@ -7,6 +7,7 @@ import TextButton from "../common/TextButton"
 import { useToggle } from "@/libs/hooks"
 import HeaderLanguage from "./HeaderLanguage"
 import { useAuthModalStore } from "@/libs/layouts/providers/AuthModalStoreContextProvider"
+import SearchInput from "../search/SearchInput"
 
 function Header() {
   const { openModal } = useAuthModalStore((state) => state)
@@ -30,6 +31,7 @@ function Header() {
           <HeaderLogo />
           <HeaderRouter currentUrl={router} />
         </Left>
+        {router !== "/search" && <SearchInput className="SearchInput" />}
         <Right>
           {userMenu ? (
             <div></div>

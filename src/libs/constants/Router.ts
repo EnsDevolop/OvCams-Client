@@ -1,5 +1,5 @@
 export const Router = [
-  { url: "/main", tab: "HOME" },
+  { url: "/home", tab: "HOME" },
   { url: "/best", tab: "BEST" },
   { url: "/community", tab: "COMMUNITY" },
 ]
