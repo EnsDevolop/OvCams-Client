@@ -40,6 +40,7 @@ const RAW_RUNTIME_STATE =
           ["@yarnpkg/sdks", "npm:3.1.0"],\
           ["axios", "npm:1.6.8"],\
           ["codemirror", "npm:5.65.16"],\
+          ["cookies-next", "npm:4.1.1"],\
           ["marked", "npm:12.0.1"],\
           ["next", "virtual:67bccc7d0bcfa1230f52b04f252953235f3247e8df364142a4b7724e7369b822323dc3148cf3825512a8c0b70e04e7501cbd67f5ac8193999d7bc7a9f219cccb#npm:14.1.3"],\
           ["prettier", "npm:3.2.5"],\
@@ -803,6 +804,15 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["@types/cookie", [\
+      ["npm:0.6.0", {\
+        "packageLocation": "../../../.yarn/berry/cache/@types-cookie-npm-0.6.0-1f4c3f48f0-10c0.zip/node_modules/@types/cookie/",\
+        "packageDependencies": [\
+          ["@types/cookie", "npm:0.6.0"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["@types/emscripten", [\
       ["npm:1.39.10", {\
         "packageLocation": "../../../.yarn/berry/cache/@types-emscripten-npm-1.39.10-3b81552c03-10c0.zip/node_modules/@types/emscripten/",\
@@ -841,6 +851,13 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["@types/node", [\
+      ["npm:16.18.91", {\
+        "packageLocation": "../../../.yarn/berry/cache/@types-node-npm-16.18.91-636ca7d6ee-10c0.zip/node_modules/@types/node/",\
+        "packageDependencies": [\
+          ["@types/node", "npm:16.18.91"]\
+        ],\
+        "linkType": "HARD"\
+      }],\
       ["npm:20.11.30", {\
         "packageLocation": "../../../.yarn/berry/cache/@types-node-npm-20.11.30-b20dd3f11f-10c0.zip/node_modules/@types/node/",\
         "packageDependencies": [\
@@ -1372,6 +1389,7 @@ const RAW_RUNTIME_STATE =
           ["@yarnpkg/sdks", "npm:3.1.0"],\
           ["axios", "npm:1.6.8"],\
           ["codemirror", "npm:5.65.16"],\
+          ["cookies-next", "npm:4.1.1"],\
           ["marked", "npm:12.0.1"],\
           ["next", "virtual:67bccc7d0bcfa1230f52b04f252953235f3247e8df364142a4b7724e7369b822323dc3148cf3825512a8c0b70e04e7501cbd67f5ac8193999d7bc7a9f219cccb#npm:14.1.3"],\
           ["prettier", "npm:3.2.5"],\
@@ -1494,6 +1512,27 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "../../../.yarn/berry/cache/convert-source-map-npm-1.9.0-e294555f4b-10c0.zip/node_modules/convert-source-map/",\
         "packageDependencies": [\
           ["convert-source-map", "npm:1.9.0"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["cookie", [\
+      ["npm:0.6.0", {\
+        "packageLocation": "../../../.yarn/berry/cache/cookie-npm-0.6.0-362d6a2e45-10c0.zip/node_modules/cookie/",\
+        "packageDependencies": [\
+          ["cookie", "npm:0.6.0"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["cookies-next", [\
+      ["npm:4.1.1", {\
+        "packageLocation": "../../../.yarn/berry/cache/cookies-next-npm-4.1.1-59f12e0396-10c0.zip/node_modules/cookies-next/",\
+        "packageDependencies": [\
+          ["cookies-next", "npm:4.1.1"],\
+          ["@types/cookie", "npm:0.6.0"],\
+          ["@types/node", "npm:16.18.91"],\
+          ["cookie", "npm:0.6.0"]\
         ],\
         "linkType": "HARD"\
       }]\

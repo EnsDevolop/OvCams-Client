@@ -1,6 +1,6 @@
 import { createStore } from "zustand/vanilla"
 
-export type AuthModalStxate = {
+export type AuthModalState = {
   visible: boolean
 }
 
