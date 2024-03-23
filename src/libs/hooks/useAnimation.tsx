@@ -15,5 +15,5 @@ export default function useAnimation(visible: boolean, time: number) {
     }
   }, [visible])
 
-  return [worked, setWorked] as [boolean, () => void]
+  return [worked, setWorked] as [boolean, (e: boolean) => void]
 }

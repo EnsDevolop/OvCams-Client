@@ -1,12 +1,14 @@
-import LargeSearchInput from "@/containers/search/LargeSearchInput";
-import SearchLayout from "./layout";
-import SearchResult from "@/containers/search/SearchResult";
+import LargeSearchInput from "@/containers/search/LargeSearchInput"
+import SearchLayout from "./layout"
+import SearchResult from "@/containers/search/SearchResult"
+import styled from "@emotion/styled"
 
 export default function Home() {
   return (
-    <SearchLayout>
+    <div>
       <LargeSearchInput />
-      <SearchResult/>
-    </SearchLayout>
+      <SearchResult />
+    </div>
   )
 }
+
