@@ -10,7 +10,7 @@ export default function CampingForm({ children }: { children: React.ReactNode })
       <CampingHeader />
       <CampingMain>
         <CampingSide />
-        {children}
+        <CampingResultBlock>{children}</CampingResultBlock>
       </CampingMain>
     </CampingBox>
   )
@@ -27,10 +27,18 @@ const CampingBox = styled.div`
 `
 
 const CampingMain = styled.div`
-  width: 100vw;
+  min-width: 1280px;
+  width: 100%;
   height: calc(100vh - 180px);
+  padding: 0 180px;
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+`
+
+const CampingResultBlock = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
 `

@@ -1,25 +1,33 @@
 import styled from "@emotion/styled"
 import React from "react"
 
-export type ButtonPropsProps = {
+export type InputProps = {
+  name: string
   className: string
-  children: React.ReactNode
   disabled: boolean
-  type: "submit" | "button"
-  onClick?: () => void
+  type: "submit" | "text" | "password"
+  value: string | number
+  onChange: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void
 }
 
-const Button = React.forwardRef<HTMLButtonElement, ButtonPropsProps>(function Button(props, ref) {
-  const { className, children, type, onClick, disabled } = props
+const Input = React.forwardRef<HTMLInputElement, InputProps>(function (props, ref) {
+  const { value, onChange, name, className, type, disabled } = props
 
   return (
-    <ButtonBlock className={className} type={type} ref={ref} onClick={onClick} disabled={disabled}>
-      {children}
-    </ButtonBlock>
+    <InputBlock
+      name={name}
+      className={className}
+      type={type}
+      value={value}
+      onChange={onChange}
+      ref={ref}
+      disabled={disabled}
+      autoComplete="off"
+    />
   )
 })
 
-const ButtonBlock = styled.button<{ disabled: boolean }>`
+const InputBlock = styled.input<{ disabled: boolean }>`
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -38,10 +46,11 @@ const ButtonBlock = styled.button<{ disabled: boolean }>`
   text-decoration: none;
   color: inherit;
   padding: 1px 2px;
-  font-size: 18px;
+  font-size: 14px;
   font-weight: 400;
   font-family: Roboto;
   line-height: 20px;
+  width: 100%;
 `
 
-export default Button
+export default Input

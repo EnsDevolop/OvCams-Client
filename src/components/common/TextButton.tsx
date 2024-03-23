@@ -19,12 +19,12 @@ const TextButton = React.forwardRef<HTMLButtonElement, TextButtonProps>(function
 
   const others = useFilteredProps(props, included) as Omit<ButtonPropsProps, "children" | "className">
   return (
-    <TextButtonBox color="white" sz={sz} active={active} ref={ref} className={className} {...others}>
+    <TextButtonBlock color="white" sz={sz} active={active} ref={ref} className={className} {...others}>
       {startIcon}
       {children}
       {endIcon}
       <TextButtonBottomBar active={active} />
-    </TextButtonBox>
+    </TextButtonBlock>
   )
 })
 
@@ -46,7 +46,7 @@ const BorderBottomKeyFrame = keyframes`
   }
 `
 
-const TextButtonBox = styled(Button)<OtherProps>`
+const TextButtonBlock = styled(Button)<OtherProps>`
   color: ${themedPalette.white};
   padding: 1px 2px;
   font-size: ${({ sz }) => (sz === "small" ? "14px" : "18px")};

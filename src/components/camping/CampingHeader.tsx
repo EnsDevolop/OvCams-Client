@@ -1,6 +1,6 @@
-"use clinet"
+"use client"
 
-import { Continent } from "@/libs/constants/Contient"
+import { Continent } from "@/libs/constants/Continent"
 import styled from "@emotion/styled"
 import TextButton from "../common/TextButton"
 import { useContinentStore } from "@/libs/layouts/providers/ContinentStoreContextProvider"
@@ -18,7 +18,7 @@ export default function CampingHeader() {
             className="continentStateButton"
             disabled={false}
             type="button"
-            color="whtie"
+            color="white"
             sz="medium"
             active={contin.tab === continent}
             onClick={() => changeContinent(contin.tab as ContinentType)}

@@ -5,7 +5,7 @@ import styled from "@emotion/styled"
 
 export default function AuthForm() {
   return (
-    <LoginBox>
+    <LoginBlock>
       <TextButton
         className="google"
         disabled={false}
@@ -34,11 +34,11 @@ export default function AuthForm() {
       >
         Continue with Naver
       </TextButton>
-    </LoginBox>
+    </LoginBlock>
   )
 }
 
-const LoginBox = styled.div`
+const LoginBlock = styled.div`
   width: 200px;
   display: flex;
   flex-direction: column;

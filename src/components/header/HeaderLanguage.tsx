@@ -4,18 +4,18 @@ import { themedPalette } from "@/libs/styles/theme"
 
 export default function HeaderLanguage() {
   return (
-    <HeaderLanguageBox>
+    <HeaderLanguageBlock>
       <TextButton className={""} disabled={true} type={"button"} color={""} sz={""} active={false}>
         KR
       </TextButton>
       <TextButton className={""} disabled={false} type={"button"} color={""} sz={""} active={true}>
         EN
       </TextButton>
-    </HeaderLanguageBox>
+    </HeaderLanguageBlock>
   )
 }
 
-const HeaderLanguageBox = styled.div`
+const HeaderLanguageBlock = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;

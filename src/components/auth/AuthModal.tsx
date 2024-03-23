@@ -3,8 +3,8 @@ import styled from "@emotion/styled"
 import { themedPalette } from "@/libs/styles/theme"
 import logo from "@/assets/logo.svg"
 import { keyframes, css } from "@emotion/react"
-import useAnimation from "@/libs/hooks/useAnimation"
 import TextButton from "../common/TextButton"
+import { useAnimation } from "@/libs/hooks"
 
 interface IAuthModalProps {
   children: React.ReactNode
