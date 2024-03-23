@@ -1,16 +1,16 @@
-"use client";
+"use client"
 
-import styled from "@emotion/styled";
-import { css } from "@emotion/react";
-import { ASIA, EUROPE, AFRICA, OCEANIA } from "@/assets/slide";
-import { useEffect, useState } from "react";
+import styled from "@emotion/styled"
+import { css } from "@emotion/react"
+import { ASIA, EUROPE, AFRICA, OCEANIA } from "@/assets/slide"
+import { useEffect, useState } from "react"
 
 export default function Slide() {
-  const [activeSlide, setActiveSlide] = useState(0);
+  const [activeSlide, setActiveSlide] = useState(0)
   const slides = [
     {
       imageUrl: `url(${ASIA.src})`,
-      title: "AISA",
+      title: "ASIA",
     },
     {
       imageUrl: `url(${EUROPE.src})`,
@@ -24,11 +24,11 @@ export default function Slide() {
       imageUrl: `url(${OCEANIA.src})`,
       title: "OCEANIA",
     },
-  ];
+  ]
 
   useEffect(() => {
-    setActiveSlide(0);
-  }, []);
+    setActiveSlide(0)
+  }, [])
 
   return (
     <>
@@ -41,7 +41,7 @@ export default function Slide() {
         />
       ))}
     </>
-  );
+  )
 }
 
 const SlideBlock = styled.div<{ active: boolean }>`
@@ -62,7 +62,7 @@ const SlideBlock = styled.div<{ active: boolean }>`
       flex: 5;
       filter: blur(0px);
     `}
-`;
+`
 
 // const SlideTitle = styled.h3`
 //   position: absolute;
