@@ -2,13 +2,26 @@
 
 import { useQuery } from "@tanstack/react-query"
 import { instance } from "../axios"
+import { ICampingResponse } from "./type"
 
-export const useCampingListQuery = (country: string, take: number, page: number) => {
+export const useCampingListQuery = ({
+  p,
+  country,
+  take,
+  page,
+}: {
+  p?: string
+  country: string
+  take: number
+  page: number
+}) => {
   const response = async () => {
-    const { data } = await instance.get("camping", {
-      params: { country, take, page },
-    })
+    const { data } = (
+      await instance.get<{ data: ICampingResponse }>("camping", {
+        params: { p, country, take, page },
+      })
+    ).data
     return data
   }
-  return useQuery({ queryKey: ["campingList", country, page, take], queryFn: response })
+  return useQuery({ queryKey: [p, "campingList", country, page, take], queryFn: response })
 }

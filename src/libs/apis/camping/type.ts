@@ -10,3 +10,8 @@ export interface ICamping {
   content: string
   facility: string[]
 }
+
+export interface ICampingResponse {
+  length: number
+  data: ICamping[]
+}

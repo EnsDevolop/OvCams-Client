@@ -1,14 +1,12 @@
 import LargeSearchInput from "@/containers/search/LargeSearchInput"
-import SearchLayout from "./layout"
 import SearchResult from "@/containers/search/SearchResult"
-import styled from "@emotion/styled"
+import { Fragment } from "react"
 
 export default function Home() {
   return (
-    <div>
+    <Fragment>
       <LargeSearchInput />
       <SearchResult />
-    </div>
+    </Fragment>
   )
 }
-
