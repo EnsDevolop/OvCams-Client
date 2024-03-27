@@ -1,14 +1,20 @@
-"use client"
-
 import { ICamping } from "@/libs/apis/camping/type"
 import BlogCard from "./BlogCard"
 import styled from "@emotion/styled"
+import { useRouter } from "next/navigation"
 
 export default function BlogCardList({ list }: { list: ICamping[] }) {
-  console.log(list)
+  const router = useRouter()
   return (
     <BlogCardListBLock>
-      {list?.map((e, index) => <BlogCard key={index} placeName={e.placeName} recommend={e.recommend} />)}
+      {list?.map((e, index) => (
+        <BlogCard
+          onClick={() => router.push(`/camping/${index}`)}
+          key={index}
+          placeName={e.placeName}
+          recommend={e.recommend}
+        />
+      ))}
     </BlogCardListBLock>
   )
 }
