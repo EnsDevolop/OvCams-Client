@@ -4,9 +4,17 @@ import ASIA from "@/assets/slide/아시아.png"
 import TextButton from "../common/TextButton"
 import { ICamping } from "@/libs/apis/camping/type"
 
-export default function BlogCard({ placeName, recommend }: Pick<ICamping, "placeName" | "recommend">) {
+interface IButton {
+  onClick: () => void
+}
+
+export default function BlogCard({
+  placeName,
+  recommend,
+  onClick,
+}: Pick<ICamping, "placeName" | "recommend"> & IButton) {
   return (
-    <CampingPostBlock>
+    <CampingPostBlock onClick={onClick}>
       <MainCampingImg src={ASIA} alt={"main image"} width={240} height={180} />
       <CampingSimpleInfoBox>
         <span>{placeName}</span>

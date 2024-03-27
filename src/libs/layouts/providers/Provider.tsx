@@ -1,10 +1,10 @@
-"use client";
+"use client"
 
-import Header from "@/components/header/Header";
-import styled from "@emotion/styled";
-import React from "react";
-import FloatingHeader from "@/components/header/FloatingHeader";
-import Footer from "@/components/footer/Footer";
+import Header from "@/components/header/Header"
+import styled from "@emotion/styled"
+import React from "react"
+import FloatingHeader from "@/components/header/FloatingHeader"
+import Footer from "@/components/footer/Footer"
 
 export default function Provider({ children }: { children: React.ReactNode }) {
   return (
@@ -12,17 +12,16 @@ export default function Provider({ children }: { children: React.ReactNode }) {
       <Wrapper>
         <Header />
         <FloatingHeader />
-        {children}
+        <Main>{children}</Main>
         <Footer />
       </Wrapper>
     </Container>
-  );
+  )
 }
 
 const Container = styled.div`
   width: 100vw;
-  min-height: 200vh;
-`;
+`
 
 const Wrapper = styled.div`
   display: flex;
@@ -31,4 +30,9 @@ const Wrapper = styled.div`
   justify-content: center;
   width: 100%;
   height: 100%;
-`;
+`
+
+const Main = styled.div`
+  width: 100%;
+  height: auto;
+`
