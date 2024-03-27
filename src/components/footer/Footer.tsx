@@ -15,13 +15,12 @@ export default function Footer() {
 }
 
 const FooterContainer = styled.div`
-  position: relative;
-  transform: translateY(0);
+  width: 1608px;
   height: 180px;
 `
 
 const FooterWrapper = styled.span`
-  width: 1608px;
+  width: 100%;
   height: 100%;
   display: flex;
   align-items: flex-end;

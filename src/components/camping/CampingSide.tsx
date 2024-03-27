@@ -48,6 +48,7 @@ export default function CampingSide() {
 const CampingSideBlock = styled.div<{ worked: boolean }>`
   transform: translateX(${({ worked }) => (worked ? "-300%" : "0")});
   transition: transform 0.5s ease;
+  height: calc(100vh - 180px);
 `
 
 const CampingSideInner = styled.div`

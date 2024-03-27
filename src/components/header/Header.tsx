@@ -31,7 +31,7 @@ function Header() {
           <HeaderLogo />
           <HeaderRouter currentUrl={router} />
         </Left>
-        {router !== "/search" && <SearchInput className="SearchInput" />}
+        <SearchInput className="SearchInput" />
         <Right>
           {userMenu ? (
             <div></div>
