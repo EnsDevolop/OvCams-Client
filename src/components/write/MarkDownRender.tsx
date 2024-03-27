@@ -1,12 +1,7 @@
-import { marked } from "marked";
+import { marked } from "marked"
 
-export default function MarkDownRender({ mark }: { mark: any }) {
-  const html = marked.parse(mark);
+export default function MarkDownRender({ mark }: { mark: string }) {
+  const html = marked.parse(mark)
 
-  console.log(html);
-  return (
-    <div>
-      <div dangerouslySetInnerHTML={{ __html: html }}></div>
-    </div>
-  );
+  return <div dangerouslySetInnerHTML={{ __html: html }}></div>
 }
