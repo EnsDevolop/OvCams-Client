@@ -10,7 +10,7 @@ export default function SearchInput({ className }: { className: string }) {
 
   useEffect(() => {
     if (enterPress && value.length !== 0) {
-      window.location.href = `/search?p=${value}`
+      window.location.href = `/camping?p=${value}`
     }
   }, [enterPress])
 
