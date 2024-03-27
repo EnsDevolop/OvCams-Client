@@ -6,11 +6,6 @@ import { useContinentStore } from "@/libs/layouts/providers/ContinentStoreContex
 
 export default function CampingLandingContainer() {
   const { selectedCountry } = useContinentStore((state) => state)
-  const { data } = useCampingListQuery(selectedCountry, 9, 1)
-
-  return (
-    <CampingForm>
-      <BlogCardList list={data?.data?.data} />
-    </CampingForm>
-  )
+  const { data } = useCampingListQuery({ p: "", country: selectedCountry, take: 9, page: 1 })
+  return <CampingForm>{data && <BlogCardList list={data?.data} />}</CampingForm>
 }
