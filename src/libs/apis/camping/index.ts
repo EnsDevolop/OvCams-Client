@@ -2,7 +2,7 @@
 
 import { useQuery } from "@tanstack/react-query"
 import { instance } from "../axios"
-import { ICampingResponse } from "./type"
+import { ICamping, ICampingResponse } from "./type"
 
 export const useCampingListQuery = ({
   p,
@@ -24,4 +24,12 @@ export const useCampingListQuery = ({
     return data
   }
   return useQuery({ queryKey: [p, "campingList", country, page, take], queryFn: response })
+}
+
+export const useCampingDetailQuery = (id: string) => {
+  const response = async () => {
+    const { data } = (await instance.get<{ data: ICamping }>(`/camping/1`)).data
+    return data
+  }
+  return useQuery({ queryKey: ["campingDetail", id], queryFn: response })
 }
