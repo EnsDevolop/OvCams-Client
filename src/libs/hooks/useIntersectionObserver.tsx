@@ -7,7 +7,11 @@ interface IUseIntersectionObserverProps {
   fetchNextPage: () => Promise<InfiniteQueryObserverResult>
 }
 
-export default function ({ threshold = 1, hasNextPage, fetchNextPage }: IUseIntersectionObserverProps) {
+export default function useIntersectionObserver({
+  threshold = 1,
+  hasNextPage,
+  fetchNextPage,
+}: IUseIntersectionObserverProps) {
   const [target, setTarget] = useState<HTMLDivElement | null | undefined>(null)
   const observerCallback: IntersectionObserverCallback = (entries) => {
     entries.forEach((entry) => {

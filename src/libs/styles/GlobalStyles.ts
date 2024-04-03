@@ -15,23 +15,12 @@ const GlobalStyles = css`
 
   * {
     box-sizing: inherit;
+    font-family: inherit;
+    color: ${themedPalette.white};
   }
 
   code {
     font-family: "Fira Mono", source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
-  }
-
-  span,
-  p,
-  h1,
-  h2,
-  h3,
-  h4,
-  input,
-  button,
-  textarea {
-    font-family: inherit;
-    color: ${themedPalette.white};
   }
 
   html,

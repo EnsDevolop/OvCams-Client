@@ -1,5 +1,6 @@
 import axios, { AxiosError } from "axios"
 import { customCookie } from "@/libs/CustomCookie"
+import { useReissue } from "./auth"
 
 export const instance = axios.create({
   baseURL: "http://localhost:8080",
@@ -28,15 +29,9 @@ instance.interceptors.response.use(
     if (axios.isAxiosError(error) && error.response) {
       const { config } = error
       const refreshToken = customCookie.get.refreshToken()
-      if (
-        error.response.data.status === 403 ||
-        error.response.data.status === 401 ||
-        error.response.data.message === "jwt must be provided" ||
-        error.response.data.message === "jwt malformed" ||
-        error.response.data.message === "RefreshToken NotFound"
-      ) {
+      if (error.response.status === 403 || error.response.status === 401) {
         if (refreshToken) {
-          alert("refresh 토큰 존재함")
+          useReissue(refreshToken)
         } else {
           customCookie.remove.accessToken()
           customCookie.remove.refreshToken()
