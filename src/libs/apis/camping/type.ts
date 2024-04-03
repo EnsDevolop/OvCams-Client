@@ -13,9 +13,21 @@ export interface ICamping {
   facility: string[]
   like: boolean
   like_count: number
+  reviews: IReview[]
 }
 
 export interface ICampingResponse {
   length: number
   data: ICamping[]
+}
+
+export interface IReview {
+  id: number
+  content: string
+  user: {
+    userID: number
+    email: string
+    name: string
+    picture: string
+  }
 }
