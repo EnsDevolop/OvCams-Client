@@ -5,8 +5,9 @@ import styled from "@emotion/styled"
 import React from "react"
 import FloatingHeader from "@/components/header/FloatingHeader"
 import Footer from "@/components/footer/Footer"
+import { IChildren } from "@/libs/types"
 
-export default function Provider({ children }: { children: React.ReactNode }) {
+export default function Provider({ children }: IChildren) {
   return (
     <Container>
       <Wrapper>

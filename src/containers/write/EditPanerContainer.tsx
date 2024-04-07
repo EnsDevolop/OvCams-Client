@@ -1,4 +1,4 @@
-export default function EditPanerContainer = () => {
+export default function EditPanelContainer  ()  {
   return (
     
   )

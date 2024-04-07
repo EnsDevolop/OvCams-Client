@@ -3,8 +3,9 @@
 import CampingHeader from "./CampingHeader"
 import styled from "@emotion/styled"
 import CampingSide from "./CampingSide"
+import { IChildren } from "@/libs/types"
 
-export default function CampingForm({ children }: { children: React.ReactNode }) {
+export default function CampingForm({ children }: IChildren) {
   return (
     <CampingBox>
       <CampingHeader />
