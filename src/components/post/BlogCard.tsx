@@ -1,6 +1,5 @@
 import styled from "@emotion/styled"
 import Image from "next/image"
-import ASIA from "@/assets/slide/아시아.png"
 import TextButton from "../common/TextButton"
 import { ICamping } from "@/libs/apis/camping/type"
 
@@ -9,13 +8,14 @@ interface IButton {
 }
 
 export default function BlogCard({
+  mainImage,
   placeName,
   recommend,
   onClick,
-}: Pick<ICamping, "placeName" | "recommend"> & IButton) {
+}: Pick<ICamping, "mainImage" | "placeName" | "recommend"> & IButton) {
   return (
     <CampingPostBlock onClick={onClick}>
-      <MainCampingImg src={ASIA} alt={"main image"} width={240} height={180} />
+      <MainCampingImg src={mainImage} alt={"main image"} width={240} height={180} />
       <CampingSimpleInfoBox>
         <span>{placeName}</span>
         <TextButton className="recommend" disabled={false} type="button" color="white" sz="small" active={false}>
