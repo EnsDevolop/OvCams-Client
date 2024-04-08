@@ -43,10 +43,6 @@ export default function SearchResult() {
     fetchNextPage,
   })
 
-  useEffect(() => {
-    console.log(data)
-  }, [data])
-
   return (
     <CampingForm>
       <SearchResultInfo />
