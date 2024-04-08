@@ -5,6 +5,7 @@ import Text from "../common/Text"
 export default function BlogDetailReview({ reviews, children }) {
   return (
     <ReviewsBlock>
+      {children}
       {reviews ? (
         reviews.map((review) => (
           <ReviewBlock key={review.id}>
@@ -20,7 +21,6 @@ export default function BlogDetailReview({ reviews, children }) {
       ) : (
         <Text size="large">No reviews yet.</Text>
       )}
-      {children}
     </ReviewsBlock>
   )
 }
