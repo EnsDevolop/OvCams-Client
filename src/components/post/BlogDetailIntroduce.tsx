@@ -5,7 +5,7 @@ import MarkDownRender from "@/components/write/MarkDownRender"
 export default function BlogDetailIntroduce({ images, content }) {
   return (
     <CampingIntroduceBlock>
-      <CampingImgList>{images?.map((e: any) => <Image src={e.src} alt={e} width={160} height={120} />)}</CampingImgList>
+      <CampingImgList>{images?.map((e: any) => <Image src={e} alt={e} width={160} height={120} />)}</CampingImgList>
       {content && <MarkDownRender mark={content} />}
       <div>
         <span>취사장, 화장실, 욕탕</span>
