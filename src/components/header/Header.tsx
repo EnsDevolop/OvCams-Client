@@ -1,4 +1,4 @@
-import React, { useRef } from "react"
+import React, { use, useCallback, useRef } from "react"
 import HeaderLogo from "./HeaderLogo"
 import HeaderRouter from "./HeaderRouter"
 import styled from "@emotion/styled"
@@ -8,21 +8,26 @@ import { useToggle } from "@/libs/hooks"
 import HeaderLanguage from "./HeaderLanguage"
 import { useAuthModalStore } from "@/libs/layouts/providers/AuthModalStoreContextProvider"
 import SearchInput from "../search/SearchInput"
+import { useProfileQuery } from "@/libs/apis/auth"
+import HeaderUserIcon from "./HeaderUserIcon"
+import HeaderUserMenu from "./HeaderUserMenu"
+import { customCookie } from "@/libs/CustomCookie"
 
 function Header() {
+  const { data } = useProfileQuery()
   const { openModal } = useAuthModalStore((state) => state)
   const [userMenu, toggleUserMenu] = useToggle(false)
   const ref = useRef<HTMLDivElement>(null)
   const router = usePathname()
 
-  // const onOutsideClick = useCallback(
-  //   (e: React.MouseEvent) => {
-  //     if (!ref.current) return;
-  //     if (ref.current.contains(e.target as any)) return;
-  //     toggleUserMenu();
-  //   },
-  //   [toggleUserMenu]
-  // );
+  const onOutsideClick = useCallback(
+    (e: React.MouseEvent) => {
+      if (!ref.current) return
+      if (ref.current.contains(e.target as any)) return
+      toggleUserMenu()
+    },
+    [toggleUserMenu],
+  )
 
   return (
     <HeaderBlock>
@@ -33,8 +38,21 @@ function Header() {
         </Left>
         <SearchInput className="SearchInput" />
         <Right>
-          {userMenu ? (
-            <div></div>
+          {data ? (
+            <div>
+              <div ref={ref}>
+                <HeaderUserIcon picture={data?.data && data?.data?.picture} onClick={toggleUserMenu} />
+              </div>
+              <HeaderUserMenu
+                onClose={onOutsideClick}
+                onLogout={() => {
+                  customCookie.remove.accessToken()
+                  customCookie.remove.refreshToken()
+                  window.location.href = "/home"
+                }}
+                visible={userMenu}
+              />
+            </div>
           ) : (
             <TextButton
               disabled={userMenu}

@@ -1,13 +1,14 @@
-"use client";
+"use client"
 
-import styled from "@emotion/styled";
+import { IChildren } from "@/libs/types"
+import styled from "@emotion/styled"
 
-export default function SlideForm({ children }: { children: React.ReactNode }) {
+export default function SlideForm({ children }: IChildren) {
   return (
     <SlideContainer>
       <SlideWrapper>{children}</SlideWrapper>
     </SlideContainer>
-  );
+  )
 }
 
 const SlideContainer = styled.div`
@@ -17,7 +18,7 @@ const SlideContainer = styled.div`
   margin: 0;
   height: 100vh;
   background-color: #0f0f0f;
-`;
+`
 
 const SlideWrapper = styled.div`
   display: flex;
@@ -27,4 +28,4 @@ const SlideWrapper = styled.div`
   height: 100%;
   justify-content: center;
   align-items: center;
-`;
+`

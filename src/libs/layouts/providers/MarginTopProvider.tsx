@@ -1,8 +1,9 @@
 "use client"
 
+import { IChildren } from "@/libs/types"
 import styled from "@emotion/styled"
 
-export default function MarginTopProvider({ children }: { children: React.ReactNode }) {
+export default function MarginTopProvider({ children }: IChildren) {
   return <MarginTopBlock>{children}</MarginTopBlock>
 }
 
