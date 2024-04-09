@@ -1,7 +1,17 @@
 import styled from "@emotion/styled"
 import Text from "./Text"
 
-const TextArea = ({ width, height, label, placeholder, onChange, value }) => {
+interface ITextArea {
+  name: string
+  width: string
+  height: string
+  label?: string
+  placeholder: string
+  onChange: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void
+  value: string
+}
+
+const TextArea = ({ width, height, label, placeholder, onChange, value }: ITextArea) => {
   return (
     <TextAreaBlock width={width} height={height}>
       {label && <Text size="medium">{label}</Text>}
