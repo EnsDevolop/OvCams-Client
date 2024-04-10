@@ -1,3 +1,5 @@
+import { IReview } from "../review/type"
+
 export interface ICamping {
   campingID: number
   recommend: number
@@ -19,15 +21,4 @@ export interface ICamping {
 export interface ICampingResponse {
   length: number
   data: ICamping[]
-}
-
-export interface IReview {
-  id: number
-  content: string
-  user: {
-    userID: number
-    email: string
-    name: string
-    picture: string
-  }
 }

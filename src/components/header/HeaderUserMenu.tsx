@@ -3,7 +3,13 @@ import OutsideClickHandler from "react-outside-click-handler"
 import HeaderUserMenuItem from "./HeaderUserMenuItem"
 import { UserMenu } from "@/libs/constants/UserMenu"
 
-export default function HeaderUserMenu({ onClose, visible, onLogout }) {
+interface IHeaderUserMenu {
+  onClose: () => void
+  visible: boolean
+  onLogout: () => void
+}
+
+export default function HeaderUserMenu({ onClose, visible, onLogout }: IHeaderUserMenu) {
   if (!visible) return null
   return (
     <OutsideClickHandler onOutsideClick={onClose}>
