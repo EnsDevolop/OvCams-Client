@@ -5,7 +5,7 @@ import { useInput, useKeyPress } from "@/libs/hooks"
 import { useEffect } from "react"
 
 export default function SearchInput({ className }: { className: string }) {
-  const [value, onChange, onReset] = useInput("")
+  const { form: value, setForm: setValue, onChange } = useInput("")
   const [enterPress] = useKeyPress("Enter")
 
   useEffect(() => {
