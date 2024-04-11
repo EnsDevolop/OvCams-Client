@@ -10,31 +10,35 @@ import BlogDetailReview from "@/components/post/BlogDetailReview"
 import { useCampingDetailQuery } from "@/libs/apis/camping"
 import { useLikePatchMutation } from "@/libs/apis/like"
 import ReviewTextArea from "../review/ReviewTextArea"
+import { useWriteReviewMutation } from "@/libs/apis/review"
 
 export default function BlogDetailContainer({ id }: { id: string }) {
   const { data } = useCampingDetailQuery(id)
   const { mutate: campingLike } = useLikePatchMutation(id)
+  const { mutate } = useWriteReviewMutation(id)
   const [currentIndex, currentItem, setCurrentIndex] = useTabs(0, [
-    <BlogDetailIntroduce images={data?.images} content={data?.content} />,
+    <BlogDetailIntroduce images={data ? data?.images : []} content={data ? data?.content : ""} />,
     <BlogDetailMap />,
-    <BlogDetailReview reviews={data?.reviews}>
-      <ReviewTextArea />
+    <BlogDetailReview reviews={data ? data?.reviews : []}>
+      <ReviewTextArea onClick={mutate} />
     </BlogDetailReview>,
   ])
 
   return (
     <Block>
       <Inner>
-        <BlogDetail
-          mainImage={data?.mainImage}
-          address={data?.address}
-          number={data?.number}
-          period={data?.period}
-          homepage={data?.homepage}
-          like={data?.like}
-          likeCount={data?.like_count}
-          onClick={campingLike}
-        />
+        {data && (
+          <BlogDetail
+            mainImage={data?.mainImage}
+            address={data?.address}
+            number={data?.number}
+            period={data?.period}
+            homepage={data?.homepage}
+            like={data?.like}
+            like_count={data?.like_count}
+            onClick={campingLike}
+          />
+        )}
         <CampingInfoHeader>
           <TextButton
             className="introduce"
