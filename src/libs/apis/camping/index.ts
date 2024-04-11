@@ -28,7 +28,7 @@ export const useCampingListQuery = ({
 
 export const useCampingDetailQuery = (id: string) => {
   const response = async () => {
-    const { data } = (await instance.get<{ data: ICamping }>(`/camping/1`)).data
+    const { data } = (await instance.get<{ data: ICamping }>(`/camping/${id}`)).data
     return data
   }
   return useQuery({ queryKey: ["campingDetail", id], queryFn: response })

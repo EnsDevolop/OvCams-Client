@@ -15,6 +15,7 @@ export default function CampingHeader() {
       <CampingHeaderInner>
         {Continent.map((contin) => (
           <TextButton
+            key={contin.tab}
             className="continentStateButton"
             disabled={false}
             type="button"

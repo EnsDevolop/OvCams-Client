@@ -2,9 +2,14 @@ import styled from "@emotion/styled"
 import TextArea from "@/components/common/TextArea"
 import TextButton from "@/components/common/TextButton"
 import { useInput, useKeyPress } from "@/libs/hooks"
+import { IReviewRequest } from "@/libs/apis/review/type"
 
-export default function ReviewTextArea() {
-  const [comment, onChange, onReset] = useInput("")
+interface IReviewTextArea {
+  onClick: (e: IReviewRequest) => void
+}
+
+export default function ReviewTextArea({ onClick }: IReviewTextArea) {
+  const { form: content, setForm: setContent, onChange } = useInput("")
   const [enterPress] = useKeyPress("Enter")
 
   return (
@@ -13,12 +18,21 @@ export default function ReviewTextArea() {
         placeholder="댓글을 작성하세요"
         width="100%"
         height="180px"
-        value={comment}
+        name="content"
+        value={content}
         onChange={onChange}
-        label="댓글"
+        label="리뷰"
       />
-      <TextButton disabled={comment.trim() === ""} className={""} type={"button"} color={""} sz={""} active={false}>
-        댓글 작성
+      <TextButton
+        onClick={() => onClick({ content })}
+        disabled={content.trim() === ""}
+        className={""}
+        type={"button"}
+        color={""}
+        sz={""}
+        active={false}
+      >
+        리뷰 작성
       </TextButton>
     </ReviewTextAreaBlock>
   )

@@ -1,4 +1,5 @@
 "use client"
+
 import CampingForm from "@/components/camping/CampingForm"
 import BlogCardList from "@/components/post/BlogCardList"
 import { useCampingListQuery } from "@/libs/apis/camping"

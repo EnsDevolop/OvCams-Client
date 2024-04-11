@@ -1,16 +1,23 @@
 import Image from "next/image"
 import styled from "@emotion/styled"
 import Text from "../common/Text"
+import { IReview } from "@/libs/apis/review/type"
 
-export default function BlogDetailReview({ reviews, children }) {
+interface IBlogDetailReview {
+  reviews: IReview[]
+  children: React.ReactNode
+}
+
+export default function BlogDetailReview({ reviews, children }: IBlogDetailReview) {
   return (
     <ReviewsBlock>
+      {children}
       {reviews ? (
         reviews.map((review) => (
           <ReviewBlock key={review.id}>
             <ProfileBlock>
               <ImageWrapper>
-                <Image src={review.user.picture} width={30} height={30} alt={review.name} />
+                <Image src={review.user.picture} width={30} height={30} alt={review.user.name} />
               </ImageWrapper>
               <Text size="medium">{review.user.name}</Text>
             </ProfileBlock>
@@ -20,7 +27,6 @@ export default function BlogDetailReview({ reviews, children }) {
       ) : (
         <Text size="large">No reviews yet.</Text>
       )}
-      {children}
     </ReviewsBlock>
   )
 }

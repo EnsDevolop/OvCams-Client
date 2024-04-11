@@ -9,8 +9,9 @@ export default function BlogCardList({ list }: { list: ICamping[] }) {
     <BlogCardListBLock>
       {list?.map((e, index) => (
         <BlogCard
-          onClick={() => router.push(`/camping/${index}`)}
+          onClick={() => router.push(`/camping/${e.campingID}`)}
           key={index}
+          mainImage={e.mainImage}
           placeName={e.placeName}
           recommend={e.recommend}
         />

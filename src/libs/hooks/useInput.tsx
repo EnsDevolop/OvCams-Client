@@ -1,10 +1,18 @@
-import { useState, useCallback } from "react"
+import { useCallback, useState } from "react"
 
-export default function useInput(defaultValue: string) {
-  const [input, setInput] = useState(defaultValue)
-  const onChange = useCallback((e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setInput(e.target.value)
+type InputType =
+  | React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  | React.MouseEvent<HTMLInputElement, MouseEvent>
+
+export default function useInput<T>(initialForm: T) {
+  const [form, setForm] = useState<T>(initialForm)
+  const onChange = useCallback((e: InputType) => {
+    const { name, value } = e.currentTarget
+    if (typeof initialForm === "object") {
+      setForm((form) => ({ ...form, [name]: value }))
+    } else {
+      setForm(value as T)
+    }
   }, [])
-  const onReset = useCallback(() => setInput(""), [])
-  return [input, onChange, onReset] as [string, typeof onChange, typeof onReset]
+  return { form, onChange, setForm }
 }

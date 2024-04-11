@@ -1,7 +1,13 @@
 import Link from "next/link"
 import TextButton from "../common/TextButton"
 
-export default function HeaderUserMenuItem({ children, link, onClick }) {
+interface IHeaderUserMenuItem {
+  children: React.ReactNode
+  link: string
+  onClick: () => void
+}
+
+export default function HeaderUserMenuItem({ children, link, onClick }: IHeaderUserMenuItem) {
   const jsx = (
     <TextButton
       onClick={onClick}

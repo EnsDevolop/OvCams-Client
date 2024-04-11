@@ -2,8 +2,23 @@ import styled from "@emotion/styled"
 import TextButton from "@/components/common/TextButton"
 import { HeartIcon } from "@/assets/icon"
 import Image from "next/image"
+import { ICamping } from "@/libs/apis/camping/type"
 
-export default function BlogDetail({ mainImage, address, number, period, homepage, like, likeCount, onClick }) {
+interface IBlogDetail
+  extends Pick<ICamping, "mainImage" | "address" | "number" | "period" | "homepage" | "like" | "like_count"> {
+  onClick: any
+}
+
+export default function BlogDetail({
+  mainImage,
+  address,
+  number,
+  period,
+  homepage,
+  like,
+  like_count,
+  onClick,
+}: IBlogDetail) {
   return (
     <InfoBlock>
       <Image src={mainImage} alt={""} width={660} height={495} />
@@ -26,7 +41,7 @@ export default function BlogDetail({ mainImage, address, number, period, homepag
             active={false}
           >
             하트
-            {likeCount}
+            {like_count}
           </TextButton>
           <TextButton className="heart" disabled={false} type="button" color="white" sz="small" active={false}>
             문의하기
