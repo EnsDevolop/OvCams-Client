@@ -6,7 +6,7 @@ export type InputProps = {
   className: string
   disabled: boolean
   type: "submit" | "text" | "password"
-  value: string | number
+  value: string | number | null
   onChange: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void
 }
 
