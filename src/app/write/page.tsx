@@ -1,7 +1,5 @@
-"use client"
-
-import MarkDownEditorContainer from "@/containers/write/MarkDownEditorContainer"
+import EditPanelContainer from "@/containers/write/EditPanelContainer"
 
 export default function Home() {
-  return <MarkDownEditorContainer />
+  return <EditPanelContainer />
 }

@@ -10,7 +10,7 @@ export interface ICamping {
   address: string
   number: string
   period: string[]
-  homepage: string
+  homepage: string | null
   content: string
   facility: string[]
   like: boolean
