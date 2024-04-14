@@ -2,13 +2,11 @@
 
 import CampingForm from "@/components/camping/CampingForm"
 import BlogCardList from "@/components/post/BlogCardList"
-import SearchResultInfo from "@/components/search/SearchResult"
 import { instance } from "@/libs/apis/axios"
 import { useContinentStore } from "@/libs/layouts/providers/ContinentStoreContextProvider"
 import { useInfiniteQuery } from "@tanstack/react-query"
 import { useSearchParams } from "next/navigation"
 import { useIntersectionObserver } from "@/libs/hooks"
-import { useEffect } from "react"
 import { ICampingResponse } from "@/libs/apis/camping/type"
 
 export default function SearchResult() {
@@ -45,8 +43,7 @@ export default function SearchResult() {
 
   return (
     <CampingForm>
-      <SearchResultInfo />
-      {data?.pages && <BlogCardList list={data?.pages} />}
+      {data?.pages.length ? <BlogCardList list={data?.pages} /> : <span>no data</span>}
       <div ref={setTarget} />
     </CampingForm>
   )

@@ -1,6 +1,7 @@
 import { useQueryClient, useMutation } from "@tanstack/react-query"
 import { instance } from "../axios"
 import { IReviewRequest } from "./type"
+import toast from "react-hot-toast"
 
 export const useWriteReviewMutation = (id: string) => {
   const querykey = ["campingDetail", id] as const
@@ -16,7 +17,7 @@ export const useWriteReviewMutation = (id: string) => {
       queryClient.invalidateQueries({ queryKey: querykey })
     },
     onError: () => {
-      alert("로그인 이후 이용해주세요")
+      toast.error('Please after login')
     },
   })
 }

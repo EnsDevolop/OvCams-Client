@@ -1,8 +1,9 @@
 "use client"
 
-import { useQuery } from "@tanstack/react-query"
+import { useMutation, useQuery } from "@tanstack/react-query"
 import { instance } from "../axios"
 import { ICamping, ICampingResponse } from "./type"
+import toast from "react-hot-toast"
 
 export const useCampingListQuery = ({
   p,
@@ -32,4 +33,21 @@ export const useCampingDetailQuery = (id: string) => {
     return data
   }
   return useQuery({ queryKey: ["campingDetail", id], queryFn: response })
+}
+
+export const useCampingCreateMutation = () => {
+  const response = async (param: Omit<ICamping, "like" | "like_count" | "reviews" | "recommend" | "campingID">) => {
+    const { data } = await instance.post(`/camping`, param)
+    return data
+  }
+  return useMutation({
+    mutationFn: response,
+    mutationKey: ["camping create"],
+    onSuccess: () => {
+      toast.success("Creation success")
+    },
+    onError: () => {
+      toast.error("Please fill in all values")
+    },
+  })
 }
