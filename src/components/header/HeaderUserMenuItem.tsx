@@ -3,8 +3,8 @@ import TextButton from "../common/TextButton"
 
 interface IHeaderUserMenuItem {
   children: React.ReactNode
-  link: string
-  onClick: () => void
+  link?: string
+  onClick?: () => void
 }
 
 export default function HeaderUserMenuItem({ children, link, onClick }: IHeaderUserMenuItem) {

@@ -1,6 +1,1 @@
-export const UserMenu = [
-  {
-    url: "/profile",
-    tab: "profile",
-  },
-]
+export const UserMenu = []

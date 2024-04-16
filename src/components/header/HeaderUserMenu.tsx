@@ -4,7 +4,7 @@ import HeaderUserMenuItem from "./HeaderUserMenuItem"
 import { UserMenu } from "@/libs/constants/UserMenu"
 
 interface IHeaderUserMenu {
-  onClose: () => void
+  onClose: (e: any) => void
   visible: boolean
   onLogout: () => void
 }
@@ -15,12 +15,14 @@ export default function HeaderUserMenu({ onClose, visible, onLogout }: IHeaderUs
     <OutsideClickHandler onOutsideClick={onClose}>
       <HeaderUserMenuBlock onClick={onClose}>
         <div className="menu-wrapper">
-          {UserMenu.map((e) => (
-            <HeaderUserMenuItem onClick={undefined} link={e.url}>
-              {e.tab}
-            </HeaderUserMenuItem>
-          ))}
-          <HeaderUserMenuItem onClick={onLogout} link={undefined}>
+          {UserMenu.length > 0 &&
+            UserMenu.map((e: { tab: string; url: string }) => (
+              <HeaderUserMenuItem onClick={undefined} link={e.url}>
+                {e.tab}
+              </HeaderUserMenuItem>
+            ))}
+
+          <HeaderUserMenuItem onClick={onLogout} link="/home">
             logout
           </HeaderUserMenuItem>
         </div>
@@ -42,7 +44,8 @@ const HeaderUserMenuBlock = styled.div`
     position: relative;
     z-index: 5;
     width: 100px;
-    height: 80px;
+    height: auto;
+    min-height: 50px;
     background: #171717;
     box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
   }
