@@ -9,6 +9,11 @@ const GlobalStyles = css`
       "Noto Sans CJK KR", arial, 돋움, Dotum, Tahoma, Geneva, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    -webkit-touch-callout: none;
+    user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
     box-sizing: border-box;
     background-color: #0b0b0b;
   }
