@@ -51,3 +51,12 @@ export const useCampingCreateMutation = () => {
     },
   })
 }
+
+export const useBestCampingQuery = () => {
+  const response = async () => {
+    const { data } = await instance.get(`/camping/best`)
+    return data
+  }
+
+  return useQuery({ queryKey: ["best"], queryFn: response })
+}

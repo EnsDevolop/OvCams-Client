@@ -22,3 +22,13 @@ export interface ICampingResponse {
   length: number
   data: ICamping[]
 }
+
+export interface ICampingBest {
+  campingID: number
+  placeName: string
+  mainImage: string
+}
+
+export interface ICampingBestResponse {
+  data: ICampingBest[]
+}
