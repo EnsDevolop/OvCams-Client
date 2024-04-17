@@ -1,7 +1,7 @@
 import styled from "@emotion/styled"
 import TextArea from "@/components/common/TextArea"
 import TextButton from "@/components/common/TextButton"
-import { useInput, useKeyPress } from "@/libs/hooks"
+import { useInput } from "@/libs/hooks"
 import { IReviewRequest } from "@/libs/apis/review/type"
 
 interface IReviewTextArea {
@@ -10,7 +10,6 @@ interface IReviewTextArea {
 
 export default function ReviewTextArea({ onClick }: IReviewTextArea) {
   const { form: content, setForm: setContent, onChange } = useInput("")
-  const [enterPress] = useKeyPress("Enter")
 
   return (
     <ReviewTextAreaBlock>

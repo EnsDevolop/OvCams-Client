@@ -5,12 +5,13 @@ import BlogCardList from "@/components/post/BlogCardList"
 import { instance } from "@/libs/apis/axios"
 import { useContinentStore } from "@/libs/layouts/providers/ContinentStoreContextProvider"
 import { useInfiniteQuery } from "@tanstack/react-query"
-import { useSearchParams } from "next/navigation"
 import { useIntersectionObserver } from "@/libs/hooks"
 import { ICampingResponse } from "@/libs/apis/camping/type"
+import { usePathname } from "next/navigation"
 
 export default function SearchResult() {
-  const p = useSearchParams().get("p") as string
+  const router = usePathname()
+  const p = router.split("?")[1]
   const { selectedCountry } = useContinentStore((state) => state)
 
   const fetchCampingData = async ({ pageParam }: { pageParam?: number }) => {
