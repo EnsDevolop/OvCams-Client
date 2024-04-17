@@ -14,7 +14,7 @@ export default function AuthForm() {
         sz="small"
         active={false}
         onClick={() => {
-          window.location.href = "http://localhost:8080/auth/google"
+          window.location.href = `${process.env.NEXT_PUBLIC_BASE_URL}/auth/google`
         }}
         startIcon={<GoogleIcon />}
       >
@@ -28,7 +28,7 @@ export default function AuthForm() {
         sz="small"
         active={false}
         onClick={() => {
-          window.location.href = "http://localhost:8080/auth/naver"
+          window.location.href = `${process.env.NEXT_PUBLIC_BASE_URL}/auth/naver`
         }}
         startIcon={<NaverIcon />}
       >

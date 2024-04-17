@@ -3,7 +3,7 @@ import { customCookie } from "@/libs/CustomCookie"
 import { useReissue } from "./auth"
 
 export const instance = axios.create({
-  baseURL: "http://localhost:8080",
+  baseURL: process.env.NEXT_PUBLIC_BASE_URL,
   timeout: 10000,
 })
 

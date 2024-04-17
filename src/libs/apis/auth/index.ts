@@ -5,7 +5,7 @@ import { useQuery } from "@tanstack/react-query"
 
 export const useReissue = (refreshToken: string) => {
   axios
-    .put(`http://localhost:8080/auth/reissue`, null, {
+    .put(`${process.env.NEXT_PUBLIC_BASE_URL}/auth/reissue`, null, {
       headers: {
         "Refresh-Token": `Bearer ${refreshToken}`,
       },
