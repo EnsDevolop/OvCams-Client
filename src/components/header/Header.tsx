@@ -1,4 +1,4 @@
-import React, { use, useCallback, useEffect, useRef } from "react"
+import React, { useCallback, useRef } from "react"
 import HeaderLogo from "./HeaderLogo"
 import HeaderRouter from "./HeaderRouter"
 import styled from "@emotion/styled"

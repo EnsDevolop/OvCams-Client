@@ -1,5 +1,3 @@
-import React from "react"
-
 import AuthModal from "@/components/auth/AuthModal"
 import AuthForm from "@/components/auth/AuthForm"
 import { useAuthModalStore } from "@/libs/layouts/providers/AuthModalStoreContextProvider"
