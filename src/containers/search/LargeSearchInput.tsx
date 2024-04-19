@@ -6,7 +6,7 @@ import { ASIA } from "@/assets/slide"
 
 export default function LargeSearchInput() {
   return (
-    <SearchBackGroundImageBlock url={ASIA.src}>
+    <SearchBackGroundImageBlock url={ASIA}>
       <LargeSearchInputBlock className="LargeSearchInput" />
     </SearchBackGroundImageBlock>
   )

@@ -2,26 +2,26 @@
 
 import styled from "@emotion/styled"
 import { css } from "@emotion/react"
-import { ASIA, EUROPE, AFRICA, OCEANIA } from "@/assets/slide"
 import { useEffect, useState } from "react"
+import { ASIA, EUROPE, AFRICA, OCEANIA } from "@/assets/slide"
 
 export default function Slide() {
   const [activeSlide, setActiveSlide] = useState(0)
   const slides = [
     {
-      imageUrl: `url(${ASIA.src})`,
+      imageUrl: `url(${ASIA})`,
       title: "ASIA",
     },
     {
-      imageUrl: `url(${EUROPE.src})`,
+      imageUrl: `url(${EUROPE})`,
       title: "EUROPE",
     },
     {
-      imageUrl: `url(${AFRICA.src})`,
+      imageUrl: `url(${AFRICA})`,
       title: "AFRICA",
     },
     {
-      imageUrl: `url(${OCEANIA.src})`,
+      imageUrl: `url(${OCEANIA})`,
       title: "OCEANIA",
     },
   ]
