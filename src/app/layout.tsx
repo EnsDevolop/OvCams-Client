@@ -4,6 +4,7 @@ import { ReactQueryClientProvider } from "@/libs/layouts/providers/ReactQueryCli
 import { AuthModalStoreContextProvider } from "@/libs/layouts/providers/AuthModalStoreContextProvider"
 import { ContinentStoreContextProvider } from "@/libs/layouts/providers/ContinentStoreContextProvider"
 import { IChildren } from "@/libs/types"
+import { Suspense } from "react"
 
 export const metadata = {
   title: "OvCams",
@@ -15,15 +16,16 @@ export default function RootLayout({ children }: IChildren) {
     <ReactQueryClientProvider>
       <html>
         <body>
-          <AuthModalStoreContextProvider>
-            <ContinentStoreContextProvider>
-              <Provider>{children}</Provider>
-              <Core />
-            </ContinentStoreContextProvider>
-          </AuthModalStoreContextProvider>
+          <Suspense>
+            <AuthModalStoreContextProvider>
+              <ContinentStoreContextProvider>
+                <Provider>{children}</Provider>
+                <Core />
+              </ContinentStoreContextProvider>
+            </AuthModalStoreContextProvider>
+          </Suspense>
         </body>
       </html>
     </ReactQueryClientProvider>
   )
 }
-
