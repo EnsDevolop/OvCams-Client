@@ -7,11 +7,11 @@ import { useContinentStore } from "@/libs/layouts/providers/ContinentStoreContex
 import { useInfiniteQuery } from "@tanstack/react-query"
 import { useIntersectionObserver } from "@/libs/hooks"
 import { ICampingResponse } from "@/libs/apis/camping/type"
-import { usePathname } from "next/navigation"
+import { usePathname, useSearchParams } from "next/navigation"
 
 export default function SearchResult() {
-  const router = usePathname()
-  const p = router.split("?")[1]
+  const router = useSearchParams()
+  const p = router.get("p")
   const { selectedCountry } = useContinentStore((state) => state)
 
   const fetchCampingData = async ({ pageParam }: { pageParam?: number }) => {
